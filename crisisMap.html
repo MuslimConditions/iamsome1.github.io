@@ -1,0 +1,117 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['map'],
+      // Note: you will need to get a mapsApiKey for your project.
+      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      'mapsApiKey': 'AIzaSyCUvV7ygLLyNDH5EmAMVRLTJLNqdtVIIes'
+    });
+    google.charts.setOnLoadCallback(drawMap);
+
+    function drawMap () {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Address');
+      data.addColumn('string', 'Location');
+      data.addColumn('string', 'Marker')
+
+      data.addRows([
+        ['Weligama, Matara, Sri Lanka', '08.03.2018: Petrol Bomb to two shops-Confirmed by Haseef around 12.45', 'business'],
+        ['Weligama, Matara, Sri Lanka', '08.03.2018: Four shops attacked-Informer: Cherry Media Hizam', 'business'],
+		['Ambatenna, Kandy,Sri Lanka', '06.03.2018: House Fired-Time 12.35, Near Jetro Motors' , 'house'],
+		['Ambatenna, Kandy,Sri Lanka', '06.03.2018: WZ Factory Fired, Near Jetro Motors' , 'business'],
+		['Ambatenna, Kandy,Sri Lanka', '06.03.2018: Thakiya Masjid and near two houses were attacked by petrol bomb, Time:01.09' , 'masjid'],
+		['Muruthalawa, Kandy,Sri Lanka', '06.03.2018: ()Masjid name not clear its attacked by petrol bomb, Time:03.00AM' ,'masjid'],
+        ['Ambatenna, Kandy,Sri Lanka', '07.03.2018: One Boy attacked by racists he is injured,His Motor bike was stolen by racists,at that time he is in Asna Masjid Akuranas' ,   'person' ],
+		['Katugastota, Kandy,Sri Lanka', '07.03.2018: City Max Shop burned, Voice cut' , 'business'],
+		['Aladeniya, Kandy,Sri Lanka', '07.03.2018: House Attacked,7th post Kurundhukola,Time:13:00' , 'business'],
+		['Akurana, Kandy,Sri Lanka', '07.03.2018: Masjid, Shops Attacked,8th Post Akurana' ,   'masjid'],
+		['Akurana, Kandy,Sri Lanka', '07.03.2018: Masjid, Shops Attacked,8th Post Akurana' , 'house'],
+		['Malwanahinna, Kandy,Sri Lanka', '07.03.2018: Masjid Attacked,Time 13.48' , 'masjid'],
+		['Kengalla, Kandy,Sri Lanka', '06.03.2018: Death of Fazaal Movlavi brother ABDUL BASITH' ,'person'],
+		['Kengalla, Kandy,Sri Lanka', '06.03.2018: Injuries to child aged 7, residents' ,'person'],
+		['Pallekele, Kandy,Sri Lanka', '06.03.2018: Damage to Pallekelle Masjid' ,'masjid'],
+		['Digana, Kandy,Sri Lanka', '06.03.2018: Damage to Digana Masjid' ,'masjid'],
+		['Balagolla, Kandy,Sri Lanka', '06.03.2018: Attacks in Balagolla' ,'masjid'],
+		['Melsiripura,Sri Lanka', '06.03.2018: Stones pelted to Wandipola Masjid windows at 4AM' ,'masjid'],
+		['Wattegama, Kandy,Sri Lanka', '05.03.2018: Wattegama Masjid Attack' ,'masjid' ],
+		['Dambulla,Sri Lanka', '05.03.2018: A Bus from Colombo attacked in Dambulla' ,'vehicle'],
+		['Manampitiya,Sri Lanka', '05.03.2018: A Bus has been  attacked in Mannampitiya' ,'vehicle'],
+		['Thennekumbura,Sri Lanka', '05.03.2018: Thennekumbura Masjid was attacked by 2 petrol bombs' ,'masjid'],
+		['Katugastota ,Sri Lanka', '05.03.2018: 2 Shops were set on fire' ,'business'],
+		['Teldeniya ,Sri Lanka', '05.03.2018: Passengers were attacked while travelling via that route' ,'person'],
+		['Digana ,Sri Lanka', '05.03.2018: Shops in Digana Bazaar attacked - 75% of the bazaar attacked' ,'business'],
+		['Digana ,Sri Lanka', '05.03.2018: Masjidun Lafir fully damaged' ,'masjid'],
+		['Digana ,Sri Lanka', '05.03.2018:  Bazaar Masjid fully damaged' ,'masjid'],
+		['Digana ,Sri Lanka', '05.03.2018:  STF has attacked 15 Muslim Youths' ,'person'],
+		['Akurana ,Sri Lanka', '05.03.2018:  4th Mile Post Masjid has attacked.' ,'masjid'],
+		['Muruthalawa ,Sri Lanka', '05.03.2018:  Stones pelted to Muruthalawa Masjid and Two tyres were set fire.' ,'masjid'],
+		['Kahalla ,Sri Lanka', '05.03.2018: STF were in the vicinity when Kahallapala Masjid was attacked' ,'masjid'],
+		['Katugastota ,Sri Lanka', '05.03.2018: A Masjid has been attacked in Madawala Road' ,'masjid'],
+		['Katugastota ,Sri Lanka', '05.03.2018: Fruit Shop infront of Katugastota Hospital was set fire' ,'business'],
+		['Digana ,Sri Lanka', '05.03.2018: All shops in Kandy were attacked, Out of control from Forces' ,'business'],
+		['Digana ,Sri Lanka', '06.03.2018: Attacked civiliance stayed in the house 07:00PM' ,'house'],
+		['Monaragala ,Sri Lanka', '06.03.2018: Attacked to mosque by stone 06:00PM' ,'masjid'],
+		['Monaragala ,Sri Lanka', '06.03.2018: Attacked to house by stone 06:00PM' ,'house'],
+		['Menikhinna ,Sri Lanka', '06.03.2018: Burned muslims 07:42PM' ,'masjid'],
+		['Menikhinna ,Sri Lanka', '06.03.2018: Attacked to Business places by stone 08:19PM' ,'business'],
+		['Menikhinna ,Sri Lanka', '07.03.2018: Attacked to Business places by stone 08:19PM' ,'house'],
+		['Puttalam ,Sri Lanka', '07.03.2018: Attacked to mosque by stone' ,'masjid'],
+		['Galle ,Sri Lanka', '07.03.2018: Damaged four  mosques in Penadenia' ,'masjid'],
+		['Hasalaka ,Sri Lanka', '07.03.2018: Damaged four  mosques in Penadenia' ,'masjid'],
+		['Welikanda ,Sri Lanka', '08.03.2018: Bus from kalmunai to colombo attacked by stone at velikanda' ,'vehicle'],
+		['Ambatenna ,Sri Lanka', '08.03.2018: someone hit by bar to sadakkathulla movlavi at ambathenna In bus' ,'person'],
+		['Beruwala ,Sri Lanka', '08.03.2018: Attacked to Business places by stone (siraj brother)' ,'business'],
+		['Manampitiya ,Sri Lanka', '08.03.2018: attacked to casmin traval bus (thirukovil)' ,'vehicle'],
+		['Moragahamula ,Sri Lanka', '04.03.2018: MKm shop' ,'business'],
+		['Galagedara ,Sri Lanka', '04.03.2018: attacked to cab ' ,'person'],
+		['Teldeniya ,Sri Lanka', '05.03.2018: Attack to pessenger' ,'person'],
+		['Digana ,Sri Lanka', '05.03.2018: attacking to more shops and houses' ,'business'],
+		['Digana ,Sri Lanka', '05.03.2018: attacking to more shops and houses' ,'house'],
+		['Pallekele ,Sri Lanka', '05.03.2018: 2 houses (belong to faris and fayas)' ,'house'],
+		['Pallekele ,Sri Lanka', '05.03.2018: 2 houses (belong to faris and fayas)' ,'house']
+		
+      ]);
+      var url = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/';
+
+      var options = {
+        zoomLevel: 6,
+        showTooltip: true,
+        showInfoWindow: true,
+        useMapTypeControl: true,
+        icons: {
+          business: {
+            normal:   url + 'Map-Marker-Ball-Azure-icon.png',
+            selected: url + 'Map-Marker-Ball-Right-Azure-icon.png'
+          },
+          masjid: {
+            normal:   url + 'Map-Marker-Push-Pin-1-Chartreuse-icon.png',
+            selected: url + 'Map-Marker-Push-Pin-1-Right-Chartreuse-icon.png'
+          },
+          house: {
+            normal:   url + 'Map-Marker-Ball-Pink-icon.png',
+            selected: url + 'Map-Marker-Ball-Right-Pink-icon.png'
+          },
+		  person: {
+            normal:   'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png',
+            selected: 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png'
+          },
+		  vehicle: {
+            normal:   'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png',
+            selected: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png'
+          }
+        }
+      };
+      var map = new google.visualization.Map(document.getElementById('map_div'));
+
+      map.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="map_div" style="height: 500px; width: 900px"></div>
+</body>
+</html>
+
+    
