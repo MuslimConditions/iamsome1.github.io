@@ -3,13 +3,84 @@
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {
-      'packages': ['map'],
+      'packages': ['map','table'],
       // Note: you will need to get a mapsApiKey for your project.
       // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
       'mapsApiKey': 'AIzaSyCUvV7ygLLyNDH5EmAMVRLTJLNqdtVIIes'
     });
     google.charts.setOnLoadCallback(drawMap);
+	google.charts.setOnLoadCallback(drawTable);
+	
+	function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Place');
+		data.addColumn('string', 'District');
+        data.addColumn('string', 'Date');
+		data.addColumn('string', 'Description');
+		data.addColumn('string', 'Category');
+        
+		data.addRows([
+        ['Weligama', 'Matara', '08.03.2018','Petrol Bomb to two shops-Confirmed by Haseef around 12.45', 'Business'],
+        ['Weligama' ,'Matara', '08.03.2018','Four shops attacked-Informer: Cherry Media Hizam', 'Business'],
+		['Ambatenna', 'Kandy', '06.03.2018','House Fired-Time 12.35, Near Jetro Motors' , 'House'],
+		['Ambatenna', 'Kandy', '06.03.2018','WZ Factory Fired, Near Jetro Motors' , 'Business'],
+		['Ambatenna', 'Kandy', '06.03.2018','Thakiya Masjid and near two houses were attacked by petrol bomb, Time:01.09' , 'Masjid'],
+		['Muruthalawa', 'Kandy', '06.03.2018','()Masjid name not clear its attacked by petrol bomb, Time:03.00AM' ,'Masjid'],
+        ['Ambatenna', 'Kandy', '07.03.2018','One Boy attacked by racists he is injured,His Motor bike was stolen by racists,at that time he is in Asna Masjid Akuranas' ,   'Person' ],
+		['Katugastota', 'Kandy', '07.03.2018','City Max Shop burned, Voice cut' , 'Business'],
+		['Aladeniya', 'Kandy', '07.03.2018','House Attacked,7th post Kurundhukola,Time:13:00' , 'Business'],
+		['Akurana', 'Kandy', '07.03.2018', 'Masjid, Shops Attacked,8th Post Akurana' ,   'Masjid'],
+		['Akurana', 'Kandy', '07.03.2018','Masjid, Shops Attacked,8th Post Akurana' , 'House'],
+		['Malwanahinna', 'Kandy', '07.03.2018','Masjid Attacked,Time 13.48' , 'Masjid'],
+		['Kengalla', 'Kandy', '06.03.2018','Death of Fazaal Movlavi brother ABDUL BASITH' ,'Person'],
+		['Kengalla', 'Kandy', '06.03.2018','Injuries to child aged 7, residents' ,'Person'],
+		['Pallekele', 'Kandy', '06.03.2018','Damage to Pallekelle Masjid' ,'Masjid'],
+		['Digana', 'Kandy', '06.03.2018','Damage to Digana Masjid' ,'Masjid'],
+		['Balagolla', 'Kandy', '06.03.2018','Attacks in Balagolla' ,'Masjid'],
+		['Melsiripura','Kurunegala', '06.03.2018','Stones pelted to Wandipola Masjid windows at 4AM' ,'Masjid'],
+		['Wattegama', 'Kandy', '05.03.2018','Wattegama Masjid Attack' ,'Masjid' ],
+		['Dambulla','Matale', '05.03.2018','A Bus from Colombo attacked in Dambulla' ,'Vehicle'],
+		['Manampitiya','Polonnaruwa', '05.03.2018','A Bus has been  attacked in Mannampitiya' ,'Vehicle'],
+		['Thennekumbura','Kandy', '05.03.2018','Thennekumbura Masjid was attacked by 2 petrol bombs' ,'Masjid'],
+		['Katugastota' ,'Kandy', '05.03.2018', '2 Shops were set on fire' ,'Business'],
+		['Teldeniya','Kandy', '05.03.2018','Passengers were attacked while travelling via that route' ,'Person'],
+		['Digana' ,'Kandy', '05.03.2018','Shops in Digana Bazaar attacked - 75% of the bazaar attacked' ,'Business'],
+		['Digana' ,'Kandy', '05.03.2018','Masjidun Lafir fully damaged' ,'Masjid'],
+		['Digana' ,'Kandy', '05.03.2018','Bazaar Masjid fully damaged' ,'Masjid'],
+		['Digana' ,'Kandy', '05.03.2018','STF has attacked 15 Muslim Youths' ,'Person'],
+		['Akurana' ,'Kandy', '05.03.2018','4th Mile Post Masjid has attacked.' ,'Masjid'],
+		['Muruthalawa' ,'Kandy', '05.03.2018','Stones pelted to Muruthalawa Masjid and Two tyres were set fire.' ,'Masjid'],
+		['Kahalla','Kandy', '05.03.2018','STF were in the vicinity when Kahallapala Masjid was attacked' ,'Masjid'],
+		['Katugastota','Kandy', '05.03.2018','A Masjid has been attacked in Madawala Road' ,'Masjid'],
+		['Katugastota','Kandy', '05.03.2018','Fruit Shop infront of Katugastota Hospital was set fire' ,'Business'],
+		['Digana' ,'Kandy', '05.03.2018','All shops in Kandy were attacked, Out of control from Forces' ,'Business'],
+		['Digana' ,'Kandy', '06.03.2018','Attacked civiliance stayed in the house 07:00PM' ,'House'],
+		['Monaragala' ,'Monaragala', '06.03.2018','Attacked to mosque by stone 06:00PM' ,'Masjid'],
+		['Monaragala' ,'Monaragala', '06.03.2018','Attacked to house by stone 06:00PM' ,'House'],
+		['Menikhinna' ,'Kandy', '06.03.2018','Burned muslims 07:42PM' ,'Masjid'],
+		['Menikhinna' ,'Kandy', '06.03.2018','Attacked to Business places by stone 08:19PM' ,'Business'],
+		['Menikhinna' ,'Kandy', '07.03.2018','Attacked to Business places by stone 08:19PM' ,'House'],
+		['Puttalam' ,'Kandy', '07.03.2018','Attacked to mosque by stone' ,'Masjid'],
+		['Galle' ,'Galle', '07.03.2018','Damaged four  mosques in Penadenia' ,'Masjid'],
+		['Hasalaka' ,'Kandy', '07.03.2018','Damaged four  mosques in Penadenia' ,'Masjid'],
+		['Welikanda','Polonnaruwa', '08.03.2018','Bus from kalmunai to colombo attacked by stone at velikanda' ,'Vehicle'],
+		['Ambatenna' ,'Kandy', '08.03.2018','someone hit by bar to sadakkathulla movlavi at ambathenna In bus' ,'Person'],
+		['Beruwala' ,'Kalutara', '08.03.2018','Attacked to Business places by stone (siraj brother)' ,'Business'],
+		['Manampitiya' ,'Polonnaruwa', '08.03.2018','attacked to casmin traval bus (thirukovil)' ,'Vehicle'],
+		['Moragahamula' ,'Kandy', '04.03.2018','MKm shop' ,'Business'],
+		['Galagedara' ,'Kandy', '04.03.2018','attacked to cab ' ,'Person'],
+		['Teldeniya' ,'Kandy', '05.03.2018','Attack to pessenger' ,'Person'],
+		['Digana' ,'Kandy', '05.03.2018','attacking to more shops and houses' ,'Business'],
+		['Digana' ,'Kandy', '05.03.2018','attacking to more shops and houses' ,'House'],
+		['Pallekele' ,'Kandy', '05.03.2018','2 houses (belong to faris and fayas)' ,'House'],
+		['Pallekele' ,'Kandy', '05.03.2018','2 houses (belong to faris and fayas)' ,'House']
+		
+      ]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
 
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }
+	
     function drawMap () {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Address');
@@ -73,7 +144,7 @@
 		['Pallekele ,Sri Lanka', '05.03.2018: 2 houses (belong to faris and fayas)' ,'house']
 		
       ]);
-      var url = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/';
+      <!-- var url = 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/'; -->
 
       var options = {
         zoomLevel: 6,
@@ -82,24 +153,34 @@
         useMapTypeControl: true,
         icons: {
           business: {
-            normal:   url + 'Map-Marker-Ball-Azure-icon.png',
-            selected: url + 'Map-Marker-Ball-Right-Azure-icon.png'
+            <!-- normal:   url + 'Map-Marker-Ball-Azure-icon.png', -->
+            <!-- selected: url + 'Map-Marker-Ball-Right-Azure-icon.png' -->
+			normal: './images/business.png',
+			selected:'./images/business.png'
           },
           masjid: {
-            normal:   url + 'Map-Marker-Push-Pin-1-Chartreuse-icon.png',
-            selected: url + 'Map-Marker-Push-Pin-1-Right-Chartreuse-icon.png'
+            <!-- normal:   url + 'Map-Marker-Push-Pin-1-Chartreuse-icon.png', -->
+            <!-- selected: url + 'Map-Marker-Push-Pin-1-Right-Chartreuse-icon.png' -->
+			normal: './images/mosque.png',
+			selected:'./images/mosque.png'
           },
           house: {
-            normal:   url + 'Map-Marker-Ball-Pink-icon.png',
-            selected: url + 'Map-Marker-Ball-Right-Pink-icon.png'
+            <!-- normal:   url + 'Map-Marker-Ball-Pink-icon.png', -->
+            <!-- selected: url + 'Map-Marker-Ball-Right-Pink-icon.png' -->
+			normal: './images/home.png',
+			selected:'./images/home.png'
           },
 		  person: {
-            normal:   'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png',
-            selected: 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png'
+            <!-- normal:   'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png', -->
+            <!-- selected: 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/48/map-marker-icon.png' -->
+			normal: './images/human.png',
+			selected:'./images/human.png'
           },
 		  vehicle: {
-            normal:   'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png',
-            selected: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png'
+            <!-- normal:   'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png', -->
+            <!-- selected: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Pink-icon.png' -->
+			normal: './images/vehicle.png',
+			selected:'./images/vehicle.png'
           }
         }
       };
@@ -111,6 +192,7 @@
 </head>
 <body>
   <div id="map_div" style="height: 500px; width: 900px"></div>
+  <div id="table_div" style="padding-top: 25px"></div>
 </body>
 </html>
 
